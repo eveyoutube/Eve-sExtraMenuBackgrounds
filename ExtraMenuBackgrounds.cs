@@ -72,6 +72,43 @@ namespace ExtraMenuBackgrounds
                 ("Ruins1_27", "_Scenery/ruins_bg_building_mid"),
                 ("Ruins1_27", "_Scenery/ruins_bg_building_mid (1)"),
                 ("Ruins1_27", "_Scenery/ruins_sign3"),
+
+                
+                ("GG_Land_of_Storms", "shell_mounds_0003_1"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (19)"),
+                ("GG_Land_of_Storms", "dunes_0002_a (15)"),
+                ("GG_Land_of_Storms", "dunes_0003_a (2)"),
+                ("GG_Land_of_Storms", "ruins_rain"),
+                ("GG_Land_of_Storms", "lightning_set"),
+                ("GG_Land_of_Storms", "dunes_0003_a (1)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (8)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (9)"),
+                ("GG_Land_of_Storms", "dunes_0003_a (3)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (3)"),
+                ("GG_Land_of_Storms", "gg_waterways_0003_4 (1)"),
+                ("GG_Land_of_Storms", "dunes_0003_a (5)"),
+                ("GG_Land_of_Storms", "dunes_0002_a (18)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (18)"),
+                ("GG_Land_of_Storms", "Particle System (1)"),
+                ("GG_Land_of_Storms", "dream_particle_03 (1)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (2)"),
+                ("GG_Land_of_Storms", "gg_waterways_0003_4"),
+                ("GG_Land_of_Storms", "dunes_0003_a (4)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (7)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (1)"),
+                ("GG_Land_of_Storms", "shell_mounds_0003_1 (10)"),
+                ("GG_Land_of_Storms", "dunes_0002_a (2)"),
+                ("GG_Land_of_Storms", "black_fader"),
+                ("GG_Land_of_Storms", "town_particle_set"),
+                ("GG_Land_of_Storms", "gg_waterways_0003_4_back"),
+                ("GG_Land_of_Storms", "gg_waterways_0003_4_back (14)"),
+                ("GG_Land_of_Storms", "gg_waterways_0003_4_back (5)"),
+                ("GG_Land_of_Storms", "gg_waterways_0003_4_back (2)"),
+                ("GG_Land_of_Storms", "dunes_0000_a (6)"),
+                ("GG_Land_of_Storms", "gg_waterways_0002_5 (7)"),
+                ("GG_Land_of_Storms", "Audio Field"),
+                ("GG_Land_of_Storms", "Audio Field (1)"),
+                ("GG_Land_of_Storms", "Audio Field (2)"),
             };
 
         public ExtraMenuBackgrounds() : base("ExtraMenuBackgrounds")
@@ -83,6 +120,7 @@ namespace ExtraMenuBackgrounds
             MenuStyleHelper.AddMenuStyleHook += QGMenuStyle.Register;
             MenuStyleHelper.AddMenuStyleHook += HiveMenuStyle.Register;
             MenuStyleHelper.AddMenuStyleHook += CityMenuStyle.Register;
+            MenuStyleHelper.AddMenuStyleHook += StormMenuStyle.Register;
         }
 
         public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
@@ -92,6 +130,7 @@ namespace ExtraMenuBackgrounds
             QGMenuStyle.Populate(preloadedObjects);
             PeakMenuStyle.Populate(preloadedObjects);
             CityMenuStyle.Populate(preloadedObjects);
+            StormMenuStyle.Populate(preloadedObjects);
         }
 
         private static string OnLanguageGetHook(string key, string sheetTitle, string orig)
@@ -105,6 +144,7 @@ namespace ExtraMenuBackgrounds
                 "MAP_NAME_ROYAL_GARDENS" => Language.Language.Get(key, "UI"),
                 "MAP_NAME_MINES" => Language.Language.Get(key, "UI"),
                 "MAP_NAME_CITY" => Language.Language.Get(key, "UI"),
+                "STORMLAND" => $"{Language.Language.Get("STORMLAND_SUPER", "CP3")} {Language.Language.Get("STORMLAND_MAIN", "CP3")} {Language.Language.Get("STORMLAND_SUB", "CP3")}",
                 _ => orig
             };
         }
