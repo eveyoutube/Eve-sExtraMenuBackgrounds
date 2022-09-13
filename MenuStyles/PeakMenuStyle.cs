@@ -38,6 +38,7 @@ public static class PeakMenuStyle
         Object.Instantiate(Camera.current.transform.Find("SceneParticlesController/mines_particles"),
             ContentPrefab.transform, true).gameObject.SetActive(true);
         ContentPrefab.SetActive(false);
+        ContentPrefab.AddComponent<MenuLighting>().color = new Color(0.540f, 0.555f, 0.854f, 1.000f);
         UObject.DontDestroyOnLoad(ContentPrefab);
 
         if (MenuStyle is not null)

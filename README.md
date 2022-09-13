@@ -5,7 +5,7 @@ Depends on SFCore.
 
 Currently featured menu backgrounds:
 + Crystal Peak
-+ Queen's Gardens [WIP]
++ Queen's Gardens
 + Hive
 + City of Tears
 + Land of Storms

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Modding;
+using SFCore.Utils;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -25,16 +26,22 @@ public static class QGMenuStyle
     {
         if (ContentPrefab is not null) return;
         ContentPrefab = new GameObject("Style_Contents");
-        foreach (var (objName, obj) in preloadedObjects["Fungus3_50"])
+        foreach (var (objName, obj) in preloadedObjects["Fungus3_05"])
         {
             obj.transform.SetParent(ContentPrefab.transform, true);
             obj.SetActive(true);
         }
 
-        ContentPrefab.transform.SetPosition3D(5.7418f, -118.296f, 1.5727f);
-        ContentPrefab.transform.SetScaleZ(0.7f);
+        var fogT = ContentPrefab.FindGameObjectInChildren("royal_garden_fog(Clone)").transform;
+        fogT.position = new Vector3(34.8294f, 50.0336f, 6.7f);
+        fogT.localScale = new Vector3(4.8767f, 4.8767f, 4.8767f);
+        
+        ContentPrefab.transform.SetPosition3D(-20.3059f, -39.2744f, 0);
+        
         UObject.Instantiate(Camera.current.transform.Find("SceneParticlesController/royal_garden_particles"),
             ContentPrefab.transform, true).gameObject.SetActive(true);
+
+        ContentPrefab.AddComponent<MenuLighting>().color = new Color(0.8888f*0.8f, 1.0074f*0.8f, 0.9518f*0.8f, 1);
         
         
         ContentPrefab.SetActive(false);

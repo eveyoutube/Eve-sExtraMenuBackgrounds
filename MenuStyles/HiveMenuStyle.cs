@@ -12,7 +12,7 @@ public static class HiveMenuStyle
     private static GameObject AudioSourcePrefab;
 
 
-    public static readonly Dictionary<string, Vector3> PositionOverrides = new()
+    private static readonly Dictionary<string, Vector3> PositionOverrides = new()
     {
         { "hive_light_effect (18)", new Vector3(49f, 0f, 150f) },
         { "hive_pillar_set (7)", new Vector3(-30f, 0f, 150f) },
@@ -63,13 +63,12 @@ public static class HiveMenuStyle
 
         UObject.Instantiate(Camera.current.transform.Find("SceneParticlesController/hive_drip_particles"),
             ContentPrefab.transform).gameObject.SetActive(true);
+        ContentPrefab.AddComponent<MenuLighting>().color = new Color(0.874f, 0.678f, 0.430f, 1.000f);
         
         ContentPrefab.SetActive(false);
         UObject.DontDestroyOnLoad(ContentPrefab);
         
         if (MenuStyle is not null)
             UObject.Instantiate(ContentPrefab, MenuStyle.transform, true).SetActive(true);
-        
-        
     }
 }

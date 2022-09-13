@@ -35,6 +35,7 @@ public static class CityMenuStyle
 
         Object.Instantiate(Camera.current.transform.Find("SceneParticlesController/ruins_interior_particles"),
             ContentPrefab.transform, true).gameObject.SetActive(true);
+        ContentPrefab.AddComponent<MenuLighting>().color = new Color(0.556f, 0.789f, 0.850f, 1.000f);
         ContentPrefab.SetActive(false);
         UObject.DontDestroyOnLoad(ContentPrefab);
 
