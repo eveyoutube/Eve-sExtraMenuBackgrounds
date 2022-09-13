@@ -30,7 +30,7 @@ public static class StormMenuStyle
             obj.SetActive(true);
         }
 
-        ContentPrefab.transform.SetPosition3D(-86.4139f, -12f, 0);
+        ContentPrefab.transform.SetPosition3D(-86.7f, -12f, 0);
 
         // Object.Instantiate(Camera.current.transform.Find("SceneParticlesController/ruins_interior_particles"),ContentPrefab.transform, true).gameObject.SetActive(true);
         

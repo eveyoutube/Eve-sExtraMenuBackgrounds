@@ -5,6 +5,7 @@ namespace ExtraMenuBackgrounds;
 
 public class MenuParallax : MonoBehaviour
 {
+    // Unused. This was just an experiment, may return to it.
     private Vector3 basePosition;
     public float strength = 1.0f;
     public float snappiness = 0.5f;

@@ -39,8 +39,6 @@ public static class PeakMenuStyle
             ContentPrefab.transform, true).gameObject.SetActive(true);
         ContentPrefab.SetActive(false);
         UObject.DontDestroyOnLoad(ContentPrefab);
-        
-        ContentPrefab.AddComponent<MenuParallax>();
 
         if (MenuStyle is not null)
             UObject.Instantiate(ContentPrefab, MenuStyle.transform, true).SetActive(true);

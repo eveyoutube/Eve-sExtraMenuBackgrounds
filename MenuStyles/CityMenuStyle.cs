@@ -27,6 +27,7 @@ public static class CityMenuStyle
         foreach (var (objName, obj) in preloadedObjects["Ruins1_27"])
         {
             obj.transform.SetParent(ContentPrefab.transform, true);
+            if (obj.GetComponent<AudioSource>() is { } audioSource) audioSource.volume = 1.0f;
             obj.SetActive(true);
         }
 
