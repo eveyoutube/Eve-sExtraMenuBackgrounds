@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 namespace ExtraMenuBackgrounds;
 
-public static class StormMenuStyle
+public static class GreenpathMenuStyle
 {
     public static GameObject MenuStyle;
     public static GameObject ContentPrefab;
@@ -13,10 +13,10 @@ public static class StormMenuStyle
     public static (string, GameObject, int, string, string[], MenuStyles.MenuStyle.CameraCurves, AudioMixerSnapshot)
         Register(MenuStyles stylesParent)
     {
-        MenuStyle = new GameObject("Storm_Menu_Style");
+        MenuStyle = new GameObject("Greenpath_Menu_Style");
         if (ContentPrefab is not null)
             UObject.Instantiate(ContentPrefab, MenuStyle.transform, true).SetActive(true);
-        return ("STORMLAND", MenuStyle, -1, "", null, null, null);
+        return ("Greenpath", MenuStyle, -1, "", null, null, null);
     }
 
     public static void Populate(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
@@ -24,7 +24,7 @@ public static class StormMenuStyle
         if (ContentPrefab is not null) return;
         ContentPrefab = new GameObject("Style_Contents");
 
-        foreach (var (objName, obj) in preloadedObjects["GG_Land_of_Storms"])
+        foreach (var (objName, obj) in preloadedObjects["GG_Greenpath"])
         {
             obj.transform.SetParent(ContentPrefab.transform, true);
             obj.SetActive(true);
